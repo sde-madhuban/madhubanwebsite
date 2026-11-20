@@ -1,0 +1,38 @@
+{
+  "name": "madhuban-website",
+  "version": "1.0.0",
+  "description": "Madhuban Group website + backend (leads, applications, admin dashboard)",
+  "type": "commonjs",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node --watch server/server.js",
+    "test": "node --check server/server.js && node -e \"require('./server/db');require('./server/validate');require('./server/mailer');require('./server/views/render');console.log('smoke ok: all modules load')\"",
+    "test:engineering": "node tests/engineering.cjs",
+    "test:security": "node tests/security.cjs",
+    "test:storage": "node tests/storage.cjs",
+    "test:mailer": "node tests/mailer.cjs",
+    "backup": "node scripts/backup.cjs",
+    "test:all": "npm test && npm run test:engineering && npm run test:security && npm run test:storage && npm run test:mailer"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.2.0",
+    "better-sqlite3-session-store": "^0.1.0",
+    "dotenv": "^17.2.1",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "express-session": "^1.18.1",
+    "helmet": "^8.1.0",
+    "morgan": "^1.10.0",
+    "multer": "^2.0.1",
+    "nodemailer": "^10.3.1"
+  },
+  "overrides": {
+    "express": {
+      "qs": "^6.16.2"
+    }
+  }
+}

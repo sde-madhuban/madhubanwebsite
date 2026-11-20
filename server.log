@@ -1,0 +1,10 @@
+◇ injected env (14) from .env // tip: ⌘ suppress logs { quiet: true }
+[mailer] SMTP not configured — email alerts disabled (submissions still saved).
+
+  Madhuban server running →  http://localhost:3000
+  Admin dashboard        →  http://localhost:3000/admin
+  Email alerts           →  disabled (set SMTP_* in .env)
+
+[0mGET / [32m200[0m 7.902 ms - 17959[0m
+[0mGET /admin/login [32m200[0m 2.252 ms - 5073[0m
+[0mGET /api/health [32m200[0m 0.890 ms - 11[0m
